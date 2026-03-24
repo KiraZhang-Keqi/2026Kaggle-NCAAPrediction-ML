@@ -93,8 +93,7 @@ The model is evaluated using **Brier score** (lower is better) via leave-one-sea
 
 ## Acknowledgments
 
-- [Kenneth Massey](https://masseyratings.com/) for the historical ranking data.
-- [Jeff Sonas / Sonas Consulting](https://www.sonasconsulting.com/) for dataset assembly.
+- [（https://www.kaggle.com/competitions/march-machine-learning-mania-2026)].
 - The Kaggle community — in particular, the public notebooks and solutions from prior years that inspired our feature engineering approach.
 
 ## License
