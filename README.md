@@ -1,4 +1,4 @@
-# 🏀 March Machine Learning Mania 2026 — NCAA Tournament Prediction
+# March Machine Learning Mania 2026 — NCAA Tournament Prediction
 
 Predicting outcomes of the 2026 NCAA Men's and Women's Basketball Tournaments for the [Kaggle March Machine Learning Mania 2026](https://www.kaggle.com/competitions/march-machine-learning-mania-2026) competition.
 
