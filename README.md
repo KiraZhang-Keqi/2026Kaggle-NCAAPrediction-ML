@@ -14,7 +14,7 @@ Built for [Kaggle March Machine Learning Mania 2026](https://kaggle.com/competit
 - [Feature Engineering](#feature-engineering)
 - [Modeling Strategy](#modeling-strategy)
 - [Getting Started](#getting-started)
-- [Skills Demonstrated](#skills-demonstrated)
+- [Skills](#skills)
 
 ---
 
@@ -248,7 +248,7 @@ jupyter notebook 2026NCAA_ML.ipynb
 
 ---
 
-## Skills Demonstrated
+## Skills
 
 | Category | Details |
 |----------|---------|
