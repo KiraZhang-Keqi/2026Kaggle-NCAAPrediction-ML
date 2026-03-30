@@ -4,8 +4,6 @@
 
 Built for [Kaggle March Machine Learning Mania 2026](https://kaggle.com/competitions/march-machine-learning-mania-2026).
 
----
-
 ## Table of Contents
 
 - [Project Overview](#project-overview)
@@ -14,9 +12,6 @@ Built for [Kaggle March Machine Learning Mania 2026](https://kaggle.com/competit
 - [Feature Engineering](#feature-engineering)
 - [Modeling Strategy](#modeling-strategy)
 - [Getting Started](#getting-started)
-- [Skills](#skills)
-
----
 
 ## Project Overview
 
@@ -37,8 +32,6 @@ Instead of treating this as a binary classification problem, I designed a **two-
 | Engineered features | 53 per matchup |
 | Cross-validation folds | 22 seasons (Leave-One-Season-Out) |
 | Feature families | 7 independent signal sources |
-
----
 
 ## Results
 
@@ -69,8 +62,6 @@ Season  Brier   Games       Season  Brier   Games
 ```
 
 Consistent performance across 22 seasons with no catastrophic failures — demonstrates robustness to year-over-year distribution shift in tournament dynamics.
-
----
 
 ## Technical Architecture
 
@@ -119,8 +110,6 @@ Consistent performance across 22 seasons with no catastrophic failures — demon
 │  [Inference] Ensemble all 22 LOSO models → mean prediction      │
 └─────────────────────────────────────────────────────────────────┘
 ```
-
----
 
 ## Feature Engineering
 
@@ -172,8 +161,6 @@ Final feature vector per matchup (53 dimensions):
 - 1 head-to-head matchup probability
 - 1 gender flag (men/women)
 
----
-
 ## Modeling Strategy
 
 ### Why Two-Stage (Margin → Probability)?
@@ -200,8 +187,6 @@ Three independent grid searches, each optimized for downstream Brier Score:
 | XGBoost | tree depth, learning rate, subsample, colsample, regularization | Pre-tuned (see config) |
 | Logistic | 13 C values × 3 solvers × 2 penalties × 2 class weights | C=0.001, L2, SAGA |
 | Probability Adjustment | 5 upper thresholds × 16 upper deltas × 5 lower × 16 lower = 6,400 | upper: (0.8, +0.01), lower: (0.2, +0.12) |
-
----
 
 ## Getting Started
 
@@ -245,22 +230,6 @@ jupyter notebook 2026NCAA_ML.ipynb
 ├── predictions.csv            # Final submission (132,133 matchups)
 └── README.md
 ```
-
----
-
-## Skills
-
-| Category | Details |
-|----------|---------|
-| **Machine Learning** | XGBoost (gradient boosting), Logistic Regression, model ensembling, probability calibration, Leave-One-Season-Out CV |
-| **Feature Engineering** | 7 feature families from raw box scores; domain-driven design (Elo, GLM quality, SOS adjustment, Laplace smoothing) |
-| **Statistical Modeling** | Gaussian GLM (statsmodels), Elo rating systems, Bayesian priors (Laplace smoothing) |
-| **Data Engineering** | Processing 200K+ game records; symmetric data augmentation; overtime normalization; multi-source feature merging |
-| **Evaluation & Diagnostics** | Brier Score optimization, AUC analysis, per-season stability checks, prediction distribution analysis |
-| **Python Stack** | pandas, NumPy, XGBoost, scikit-learn, statsmodels, matplotlib, seaborn |
-| **Problem Framing** | Reframing classification as regression + calibration for better-calibrated probabilistic predictions |
-
----
 
 ## License
 
