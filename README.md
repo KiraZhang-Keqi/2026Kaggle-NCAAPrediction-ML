@@ -2,7 +2,7 @@
 
 **An end-to-end machine learning system for predicting 132,000+ NCAA tournament matchups (Men's & Women's), achieving a Brier Score of 0.1679 through a multi-stage ensemble of XGBoost, GLM, Elo ratings, and logistic calibration.**
 
-Built for [Kaggle March Machine Learning Mania 2026](https://kaggle.com/competitions/march-machine-learning-mania-2026).
+Built for [Kaggle March Machine Learning Mania 2026](https://kaggle.com/competitions/march-machine-learning-mania-2026)
 
 ## Table of Contents
 
