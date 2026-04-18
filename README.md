@@ -4,8 +4,6 @@ An end-to-end machine learning system for predicting 132,000+ NCAA tournament ma
 
 Built for [Kaggle March Machine Learning Mania 2026](https://www.kaggle.com/competitions/march-machine-learning-mania-2026)
 
----
-
 ## Project Overview
 
 This project predicts win probabilities for every possible matchup in the 2026 NCAA tournament using 22 seasons of historical data (2003–2025). The pipeline includes:
@@ -15,8 +13,6 @@ This project predicts win probabilities for every possible matchup in the 2026 N
 - **Leave-One-Season-Out (LOSO)** cross-validation preventing temporal leakage
 - **Ensemble inference** averaging 22 season-held-out models for robust predictions
 - **Probability tail adjustment** via 6,400-configuration grid search optimized for Brier Score
-
----
 
 ## Key Results
 
@@ -55,8 +51,6 @@ Consistent performance across 22 seasons with no catastrophic failures — demon
 
 The point margin encodes *how dominant* a win was. The logistic layer then learns the non-linear mapping from margin to probability, producing better-calibrated outputs than direct classification.
 
----
-
 ## Pipeline Architecture
 
 ```
@@ -80,8 +74,6 @@ Data Loading → Overtime Normalization → Symmetric T1/T2 Doubling → Seed Me
                                     │  [Inference] Ensemble 22 LOSO Models        │
                                     └─────────────────────────────────────────────┘
 ```
-
----
 
 ## Feature Engineering
 
@@ -109,7 +101,6 @@ Final feature vector per matchup (53 dimensions):
 | Head-to-head matchup probability | 1 |
 | Gender flag (men/women) | 1 |
 
----
 
 ## Modeling Strategy
 
@@ -127,7 +118,6 @@ Three independent grid searches, each optimized for downstream Brier Score:
 | Logistic Calibration | 13 C values × 3 solvers × 2 penalties × 2 class weights | C=0.001, L2, SAGA |
 | Probability Adjustment | 5 × 16 × 5 × 16 = 6,400 configurations | upper: (0.8, +0.01), lower: (0.2, +0.12) |
 
----
 
 ## Scale
 
@@ -153,7 +143,6 @@ Three independent grid searches, each optimized for downstream Brier Score:
 - matplotlib, seaborn
 - tqdm (progress tracking)
 
----
 
 ## Environment
 
@@ -169,7 +158,6 @@ Data download from Kaggle:
 kaggle competitions download -c march-machine-learning-mania-2026 -p data/
 ```
 
----
 
 ## Files
 
@@ -180,7 +168,6 @@ kaggle competitions download -c march-machine-learning-mania-2026 -p data/
 | `data/W*.csv` | Women's regular season, tournament, seeds |
 | `predictions.csv` | Final Submission (132,133 matchups) |
 
----
 
 ## Acknowledgments
 
