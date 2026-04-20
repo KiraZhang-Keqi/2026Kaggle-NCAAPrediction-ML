@@ -165,7 +165,6 @@ kaggle competitions download -c march-machine-learning-mania-2026 -p data/
 |---|---|
 | `2026NCAA Final Submission.ipynb` | Final pipeline used for submission |
 | `2026NCAA Experiments.ipynb` | Alternative models & feature engineering attempts |
-| `2026NCAA Dataset.zip | Regular season, tournament, seeds |
 | `2026NCAA Predictions.xlsx` | Final Submission (132,133 matchups) |
 
 
